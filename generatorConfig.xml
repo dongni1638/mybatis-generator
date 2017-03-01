@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">  
+<generatorConfiguration>  
+<!-- ���ݿ�����-->  
+    <classPathEntry  location="ojdbc6-10.2.0.4.0.jar"/>  
+    <context id="DB2Tables"  targetRuntime="MyBatis3">  
+        <commentGenerator>  
+            <property name="suppressDate" value="true"/>  
+            <!-- �Ƿ�ȥ���Զ����ɵ�ע�� true���� �� false:�� -->  
+            <property name="suppressAllComments" value="true"/>  
+        </commentGenerator>  
+        <!--���ݿ�����URL���û��������� -->  
+        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@127.0.0.1:1521:orcl" userId="hrm" password="hrm">  
+        </jdbcConnection>  
+        <javaTypeResolver>  
+            <property name="forceBigDecimals" value="false"/>  
+        </javaTypeResolver>  
+        <!-- ����ģ�͵İ�����λ��-->  
+        <javaModelGenerator targetPackage="com.ice.demo" targetProject="src">  
+            <property name="enableSubPackages" value="true"/>  
+            <property name="trimStrings" value="true"/>  
+        </javaModelGenerator>  
+        <!-- ����ӳ���ļ��İ�����λ��-->  
+        <sqlMapGenerator targetPackage="com.ice.mapping" targetProject="src">  
+            <property name="enableSubPackages" value="true"/>  
+        </sqlMapGenerator>  
+        <!-- ����DAO�İ�����λ��-->  
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.ice.dao" targetProject="src">  
+            <property name="enableSubPackages" value="true"/>  
+        </javaClientGenerator>  
+        <!-- Ҫ���ɵı� tableName�����ݿ��еı�������ͼ�� domainObjectName��ʵ������-->  
+        <table tableName="DEPT_INF" domainObjectName="NAME" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+    </context>  
+</generatorConfiguration>  
